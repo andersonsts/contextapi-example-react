@@ -1,4 +1,4 @@
-import { memo, ReactNode } from "react";
+import { memo, ReactNode, useRef } from "react";
 import { ModalContainer, ModalContent, ModalHeader, ModalBody, ModalFooter } from "./styles";
 
 interface ModalProps {
@@ -9,6 +9,17 @@ interface ModalProps {
 }
 
 const Modal = ({ showModal, onClose, title, children }: ModalProps) => {
+  const number = useRef(0);
+
+  function handleSetValue() {
+    const newNumber = Math.round(Math.random() * (10 - 1) + 1);
+    number.current = newNumber;  
+  }
+
+  function handlePrintValue() {
+    alert(number.current)
+  }
+
   return (
     <ModalContainer show={showModal} onClick={onClose}>
       <ModalContent show={showModal} onClick={event => event.stopPropagation()}>
@@ -24,6 +35,15 @@ const Modal = ({ showModal, onClose, title, children }: ModalProps) => {
           <button type='button' onClick={onClose}>
             close
           </button>
+
+          <div>
+            <button type='button' onClick={handleSetValue}>
+              Set value
+            </button>
+            <button type='button' onClick={handlePrintValue}>
+              print value
+            </button>
+          </div>
         </ModalFooter>
       </ModalContent>  
     </ModalContainer>
