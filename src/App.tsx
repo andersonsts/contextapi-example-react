@@ -1,11 +1,15 @@
 import { DataProvider } from './context';
 
-import Content from './components/Content';
+// import Content from './components/Content';  
+import Global from './styles/Global';
+import Tab from './components/Tab';
 
 function App() {
   return (
     <DataProvider>
-      <Content />
+      <Global />
+      {/* <Content /> */}
+      <Tab />
     </DataProvider>
   );
 }
