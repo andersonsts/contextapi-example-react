@@ -1,15 +1,17 @@
 import { DataProvider } from './context';
 
 // import Content from './components/Content';  
+// import Tab from './components/Tab';
 import Global from './styles/Global';
-import Tab from './components/Tab';
+import Svg from './components/SvgExample';
 
 function App() {
   return (
     <DataProvider>
       <Global />
       {/* <Content /> */}
-      <Tab />
+      {/* <Tab /> */}
+      <Svg />
     </DataProvider>
   );
 }

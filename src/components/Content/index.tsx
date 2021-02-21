@@ -1,8 +1,8 @@
 
 import { useMemo, useState } from 'react';
 
-import List from '../List';
 import Modal from '../Modal';
+import List from '../List';
 import Ref from '../Ref';
 
 export default function Content() {
